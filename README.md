@@ -18,6 +18,7 @@ The project involves solving five different questions using SQL queries in pgAdm
 **Question 1:** Create a temporary table that joins the orders, order_products, and products tables to get information about each order, including the products that were purchased and their department and aisle information.
 
 SQL Query: 
+
 CREATE TEMP TABLE all_orders_products AS (
 SELECT o.order_id,
 	o.user_id,
