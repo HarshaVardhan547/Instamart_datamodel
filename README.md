@@ -15,7 +15,7 @@ The dataset consists of around 1,050,000 rows of data.
 **SQL Queries and Questions**
 The project involves solving five different questions using SQL queries in pgAdmin 4. Here are the questions and the corresponding SQL queries:
 
-**Question 1: **Create a temporary table that joins the orders, order_products, and products tables to get information about each order, including the products that were purchased and their department and aisle information.
+**Question 1:** Create a temporary table that joins the orders, order_products, and products tables to get information about each order, including the products that were purchased and their department and aisle information.
 
 SQL Query: 
 CREATE TEMP TABLE all_orders_products AS (
@@ -36,7 +36,7 @@ SELECT o.order_id,
 	LEFT JOIN products p ON op.product_id = p.product_id
 )
 
-**Question 2: **Create a temporary table that groups the orders by product and finds the total number of times each product was purchased, the total number of times each product was reordered, and the average number of times each product was added to a cart.
+**Question 2:** Create a temporary table that groups the orders by product and finds the total number of times each product was purchased, the total number of times each product was reordered, and the average number of times each product was added to a cart.
 
 SQL Query: 
 CREATE TEMP TABLE  product_info AS
@@ -51,7 +51,7 @@ GROUP BY product_id
 ORDER BY product_id ASC
 )
 
-**Question 3: **Create a temporary table that groups the orders by department and finds the total number of products purchased, the total number of unique products purchased, the total number of products purchased on weekdays vs weekends, and the average time of day that products in each department are ordered.
+**Question 3:** Create a temporary table that groups the orders by department and finds the total number of products purchased, the total number of unique products purchased, the total number of products purchased on weekdays vs weekends, and the average time of day that products in each department are ordered.
 
 SQL Query: 
 CREATE TEMP TABLE order_dep_info AS (
@@ -73,7 +73,7 @@ GROUP BY department_id
 ORDER BY department_id ASC
 )
 
-**Question 4: **Create a temporary table that groups the orders by aisle and finds the top 10 most popular aisles, including the total number of products purchased and the total number of unique products purchased from each aisle.
+**Question 4:** Create a temporary table that groups the orders by aisle and finds the top 10 most popular aisles, including the total number of products purchased and the total number of unique products purchased from each aisle.
 
 SQL Query: 
 CREATE TEMP TABLE orders_aisle_info AS(
@@ -86,7 +86,7 @@ FROM all_orders_products
 GROUP BY aisle_id
 ORDER BY total_products_purchased_aisle DESC
 )
-**Question 5: **Combine the information from the previous temporary tables into a final table that shows comprehensive information about each product, including the total number of times purchased, total number of times reordered, average number of times added to cart, total number of products purchased, total number of unique products purchased, total number of products purchased on weekdays, total number of products purchased on weekends, and average time of day products are ordered in each department.
+**Question 5:** Combine the information from the previous temporary tables into a final table that shows comprehensive information about each product, including the total number of times purchased, total number of times reordered, average number of times added to cart, total number of products purchased, total number of unique products purchased, total number of products purchased on weekdays, total number of products purchased on weekends, and average time of day products are ordered in each department.
 
 SQL Query: 
 CREATE TEMPORARY TABLE product_behavior_analysis AS(
@@ -100,6 +100,7 @@ FROM product_info AS pos
     JOIN aisles AS a ON pi.aisle_id = a.aisle_id
     JOIN order_dep_info AS dos ON pi.department_id = dos.department_id
 )
+
 **Process**
 1)Downloaded the Instacart Market Basket Analysis dataset from Kaggle.
 2)Set up a PostgreSQL database to store the dataset and perform SQL queries. You can use tools like pgAdmin 4 to manage the database.
