@@ -86,6 +86,7 @@ FROM all_orders_products
 GROUP BY aisle_id
 ORDER BY total_products_purchased_aisle DESC
 )
+
 **Question 5:** Combine the information from the previous temporary tables into a final table that shows comprehensive information about each product, including the total number of times purchased, total number of times reordered, average number of times added to cart, total number of products purchased, total number of unique products purchased, total number of products purchased on weekdays, total number of products purchased on weekends, and average time of day products are ordered in each department.
 
 SQL Query: 
